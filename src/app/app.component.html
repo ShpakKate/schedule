@@ -1,0 +1,13 @@
+<div class="wrap">
+  <h3> Расписание пригороднего и международного транспорта </h3>
+
+  <app-form-of-schedule (onResponse)="getScheduleList($event)" ></app-form-of-schedule>
+
+  <app-table-of-schedule *ngIf="!isAbsent; else absent" [scheduleList]="scheduleList">
+    <pre> {{scheduleList}}</pre>
+  </app-table-of-schedule>
+
+  <ng-template #absent>
+    <div class="absent"> Нет прямых рейсов по данному напрвлению. Измените запрос. </div>
+  </ng-template>
+</div>

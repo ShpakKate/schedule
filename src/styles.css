@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --dark-gray: #4D4A4A;
+  --gray: #A6A6A6;
+  --light-gray: #E9E9E6;
+  --yelow: #F4CC40;
+  --white: #E9E9E6;
+}
+
+body {
+  font-family: system-ui;
+  color: var(--dark-gray);
+}

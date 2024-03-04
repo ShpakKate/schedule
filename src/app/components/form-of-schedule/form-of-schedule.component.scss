@@ -1,0 +1,133 @@
+@mixin active-btn {
+  background: var(--dark-gray);
+  color: var(--white);
+}
+
+@mixin radius {
+  border-radius: 5px;
+}
+
+@mixin btn-select {
+  @include radius;
+  border: 2px solid var(--light-gray);
+}
+
+* {
+  font-size: 1.1rem;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+button {
+  height: 3rem;
+}
+
+.locate-wrapper {
+  @include radius;
+  border: 2px solid var(--light-gray);
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  .btn-arrow-wrapper {
+    position: relative;
+    padding: 0 1rem;
+
+    button {
+      @include btn-select;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .city-wrapper {
+    width: 100%;
+
+    input, select {
+      display: block;
+      width: 95%;
+      border: none;
+      padding: 1rem 0;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:first-child {
+        border-bottom: 2px solid var(--light-gray);
+      }
+    }
+
+  }
+}
+
+.date-wrapper {
+  display: flex;
+
+  button {
+    @include btn-select;
+    flex: 4;
+    position: relative;
+
+    &:active {
+      @include active-btn;
+    }
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+    .date-picker {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  .date-picker-icon {
+    margin-left: 1rem;
+    vertical-align: middle;
+  }
+
+}
+
+.transport-wrapper {
+  display: flex;
+  column-gap: 0.5rem;
+
+  button {
+    flex: 2;
+    @include btn-select;
+
+    &:active {
+      @include active-btn;
+    }
+  }
+}
+
+.button-submit {
+  @include radius;
+  background: var(--yelow);
+  height: 3rem;
+  border: none;
+}
+
+.active {
+  @include active-btn;
+}

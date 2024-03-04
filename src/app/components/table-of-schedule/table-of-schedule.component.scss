@@ -1,0 +1,89 @@
+@mixin textBold {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@mixin textLight {
+  color: var(--gray);
+}
+
+$size-small: 0.9rem;
+
+table {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+tr {
+  margin: 0.5rem 0;
+}
+
+td {
+  min-width: 7rem;
+
+  &:first-child {
+    min-width: 1rem;
+  }
+}
+
+.station-wrapper {
+  min-width: 10rem;
+}
+
+.transport-wrapper {
+  color: var(--yelow);
+}
+
+.station, .departure-wrapper {
+  text-align: left;
+}
+
+.arrival-wrapper {
+  text-align: right;
+}
+
+.time-wrapper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  min-width: 3rem;
+}
+
+.station {
+  @include textBold;
+}
+
+.transport {
+  font-size: $size-small;
+}
+
+.transport-type {
+  @include textLight;
+  font-size: $size-small;
+}
+
+.date-departure {
+  @include textLight;
+}
+
+.time-departure {
+  @include textBold;
+}
+
+.duration-time {
+  @include textLight;
+}
+
+.date-arrival {
+  @include textLight;
+}
+
+.arrival, .departure {
+  font-size: $size-small;
+}
+
+.time-arrival {
+  @include textBold;
+}
+
+
